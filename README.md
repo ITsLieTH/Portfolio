@@ -2,7 +2,7 @@
 
 Personal portfolio built with React, Framer Motion, and Vite. It showcases full-stack development, graphic design, and graduation project work.
 
-**Live site:** _add link after deployment_
+**Live site:** https://laith-abuarrah-portfolio.vercel.app/
 
 ## Sections
 
