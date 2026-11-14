@@ -1,0 +1,420 @@
+.about {
+  width: 100%;
+  max-width: 1120px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4rem;
+}
+
+/* =========================
+   INTRO
+   ========================= */
+
+.about-intro {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.75rem;
+}
+
+.about-label {
+  color: rgba(255, 255, 255, 0.48);
+
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+
+  letter-spacing: 0.2em;
+}
+
+.about-title {
+  display: flex;
+  flex-direction: column;
+
+  color: var(--color-text);
+
+  font-size: clamp(3.8rem, 8vw, 7.5rem);
+  font-weight: 700;
+
+  letter-spacing: -0.065em;
+  line-height: 0.84;
+}
+
+.about-title span {
+  display: block;
+}
+
+.about-title span:first-child {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.about-title span:last-child {
+  color: rgba(255, 255, 255, 0.32);
+}
+
+/* A thin line between the two words, replaces the lost × */
+.about-title-divider {
+  width: 3.5rem;
+  height: 1px;
+  margin: 0.45rem 0;
+
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.about-description {
+  width: min(100%, 560px);
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* =========================
+   MAIN LAYOUT
+   ========================= */
+
+.about-main {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 1.5rem;
+
+  align-items: stretch;
+}
+
+/* =========================
+   PROFILE
+   ========================= */
+
+.about-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   GLASS PHOTO
+   ========================= */
+
+.about-photo {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+
+  overflow: hidden;
+
+  background: var(--glass-bg);
+
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+
+  box-shadow: var(--glass-shadow);
+
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-photo::before {
+  content: '';
+
+  position: absolute;
+  z-index: 2;
+
+  top: 0;
+  left: 8%;
+
+  width: 84%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+.about-photo::after {
+  content: '';
+
+  position: absolute;
+  z-index: 1;
+
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    transparent 40%,
+    transparent 70%,
+    rgba(255, 255, 255, 0.02)
+  );
+
+  pointer-events: none;
+}
+
+.about-photo:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* =========================
+   DETAIL GLASS CARDS
+   ========================= */
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.85rem;
+}
+
+.about-detail {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+
+  gap: 1.25rem;
+
+  flex: 1;
+
+  padding: 1.75rem 2rem;
+
+  background: var(--glass-bg);
+
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+
+  box-shadow: var(--glass-shadow);
+
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  overflow: hidden;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-detail::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 8%;
+
+  width: 84%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.10),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+.about-detail:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+  transform: translateY(-2px);
+}
+
+/* Numbers brighter so the three cards read as a sequence */
+.about-detail-number {
+  padding-top: 0.15rem;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+
+  letter-spacing: 0.08em;
+}
+
+.about-detail-content {
+  transition: transform 0.3s ease;
+}
+
+.about-detail:hover .about-detail-content {
+  transform: translateX(4px);
+}
+
+.about-detail h4 {
+  margin-bottom: 0.75rem;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+
+  letter-spacing: 0.18em;
+}
+
+.about-detail p {
+  max-width: 34rem;
+
+  color: rgba(255, 255, 255, 0.56);
+
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* =========================
+   CLOSING LINE
+   ========================= */
+
+.about-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.about-cta p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+}
+
+.about-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0;
+  background: none;
+  border: none;
+
+  color: var(--color-text);
+
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.about-cta-link:hover {
+  gap: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+  .about {
+    gap: 3rem;
+  }
+
+  .about-title {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+
+  .about-description {
+    width: 100%;
+  }
+
+  .about-main {
+    grid-template-columns: 1fr;
+
+    gap: 1.25rem;
+  }
+
+  /* Full width on phones, shorter crop so it reads as a banner */
+  .about-profile {
+    display: none;
+  }
+
+  .about-photo {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  .about-photo img {
+    object-position: center 25%;
+  }
+
+  .about-detail {
+    padding: 1.5rem;
+  }
+
+  .about-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-photo,
+  .about-detail,
+  .about-detail-content,
+  .about-cta-link {
+    transition: none !important;
+  }
+
+  .about-detail:hover {
+    transform: none;
+  }
+
+  .about-detail:hover .about-detail-content {
+    transform: none;
+  }
+}
