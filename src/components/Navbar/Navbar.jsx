@@ -76,20 +76,13 @@ function Navbar({ active, onNavigate }) {
         })}
       </div>
 
-      {/* RIGHT — AVAILABILITY + RESUME */}
+      {/* RIGHT — RESUME */}
       <motion.div
         className="navbar-right"
         initial={{ opacity: 0, x: 25 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="navbar-availability">
-          <span className="status-ring">
-            <span className="status-core" />
-          </span>
-          <span className="availability-text">OPEN TO FREELANCE</span>
-        </div>
-
         <a
           href="/Laith-CV.pdf"
           download="Laith-CV.pdf"
